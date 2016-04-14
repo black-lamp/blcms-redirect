@@ -12,6 +12,7 @@ class m160413_143131_redirect_migration extends Migration
             'from' => $this->string(255),
             'to' => $this->string(255),
             'type_id' => $this->integer(),
+            'position' => $this->integer(),
             'comment' => $this->string(255)
         ]);
 
