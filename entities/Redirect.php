@@ -1,5 +1,5 @@
 <?php
-namespace bl\cms\entities;
+namespace bl\cms\redirect\entities;
 use yii\db\ActiveRecord;
 
 /**
