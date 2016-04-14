@@ -6,7 +6,7 @@ INSTALLATION
 
 ### Migrate language table
 
-	yii migrate --migrationPath=@vendor/black-lamp/bl-redirect/migrations
+	yii migrate --migrationPath=@vendor/black-lamp/blcms-redirect/migrations
 
 ### Configure Module in your modules section
 
