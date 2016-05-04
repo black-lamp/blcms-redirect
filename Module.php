@@ -7,5 +7,5 @@ namespace bl\cms\redirect;
  */
 class Module extends \yii\base\Module
 {
-    public $defaultRoute = 'redirect/list';
+    public $defaultRoute = 'redirect/';
 }
