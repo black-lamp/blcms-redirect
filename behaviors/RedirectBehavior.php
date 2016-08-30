@@ -32,7 +32,7 @@ class RedirectBehavior extends Behavior
                 if(preg_match($redirect->pattern, $url)) {
                     $newUrl = preg_replace($redirect->pattern, $redirect->subject, $url);
                     if($newUrl != $url) {
-                        Yii::$app->getResponse()->redirect($newUrl, $redirect->type->code);
+                        Yii::$app->getResponse()->redirect($newUrl, $redirect->type->code)->send();
                         break;
                     }
                 }
