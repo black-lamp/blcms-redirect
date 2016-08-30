@@ -60,7 +60,9 @@ class RedirectController extends Controller
     public function actionSwitchActive($id) {
         if($redirect = Redirect::findOne($id)) {
             $redirect->active = !$redirect->active;
-            $redirect->save();
+            if ($redirect->validate()) {
+                $redirect->save();
+            }
         }
 
         return $this->redirect(Url::to(['/redirect']));

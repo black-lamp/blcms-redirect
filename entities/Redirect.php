@@ -10,6 +10,8 @@ use yii2tech\ar\position\PositionBehavior;
  *
  * @property string $pattern
  * @property string $subject
+ * @property string $redirect
+ * @property string $comment
  * @property RedirectType $type
  */
 class Redirect extends ActiveRecord
@@ -33,7 +35,8 @@ class Redirect extends ActiveRecord
     public function rules()
     {
         return [
-            ['comment', 'string'],
+            [['comment', 'subject', 'pattern'], 'string'],
+            [['active'], 'boolean'],
             [['pattern', 'subject'], 'required'],
             [
                 'type_id', 'exist',
