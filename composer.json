@@ -2,7 +2,7 @@
   "name": "black-lamp/blcms-redirect",
   "description": "Yii 2 redirect module",
   "keywords": ["black-lamp", "cms", "redirects"],
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "yii2-extension",
   "authors": [
     {
