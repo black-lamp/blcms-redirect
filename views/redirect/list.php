@@ -31,65 +31,65 @@ $this->title = 'Redirects';
                 <div class="table-responsive">
                     <table class="table table-hover">
                         <thead>
-                            <tr>
-                                <th class="text-center">Position</th>
-                                <th class="text-center">Active</th>
-                                <th class="text-center">Comment</th>
-                                <th class="text-center">Pattern</th>
-                                <th class="text-center">Subject</th>
-                                <th class="text-center">Type</th>
-                                <th class="text-center">Actions</th>
-                            </tr>
+                        <tr>
+                            <th class="text-center">Position</th>
+                            <th class="text-center">Active</th>
+                            <th class="text-center">Comment</th>
+                            <th class="text-center">Pattern</th>
+                            <th class="text-center">Subject</th>
+                            <th class="text-center">Type</th>
+                            <th class="text-center">Actions</th>
+                        </tr>
                         </thead>
                         <tbody>
-                            <? foreach ($redirects as $redirect): ?>
-                                <tr>
-                                    <td class="text-center">
-                                        <a href="<?= Url::to([
-                                            'redirect/up',
-                                            'id' => $redirect->id
-                                        ]) ?>" class="glyphicon glyphicon-arrow-up text-primary">
-                                        </a>
-                                        <a href="<?= Url::to([
-                                            'redirect/down',
-                                            'id' => $redirect->id
-                                        ]) ?>" class="glyphicon glyphicon-arrow-down text-primary">
-                                        </a>
-                                    </td>
-                                    <td class="text-center">
-                                        <a href="<?= Url::to([
-                                            'redirect/switch-active',
-                                            'id' => $redirect->id
-                                        ]) ?>">
-                                            <? if ($redirect->active): ?>
-                                                <i class="glyphicon glyphicon-ok text-success"></i>
-                                            <? else: ?>
-                                                <i class="glyphicon glyphicon-minus text-danger"></i>
-                                            <? endif; ?>
-                                        </a>
-                                    </td>
-                                    <td class="text-center">
-                                        <?= $redirect->comment ?>
-                                    </td>
-                                    <td class="text-center">
-                                        <?= $redirect->pattern ?>
-                                    </td>
-                                    <td class="text-center">
-                                        <?= $redirect->subject ?>
-                                    </td>
-                                    <td class="text-center">
-                                        <?= $redirect->type->code ?>
-                                    </td>
-                                    <td class="text-center">
-                                        <a href="<?= Url::to([
-                                            'redirect/remove',
-                                            'id' => $redirect->id
-                                        ]) ?>" class="glyphicon glyphicon-remove text-danger">
+                        <?php foreach ($redirects as $redirect): ?>
+                            <tr>
+                                <td class="text-center">
+                                    <a href="<?= Url::to([
+                                        'redirect/up',
+                                        'id' => $redirect->id
+                                    ]) ?>" class="glyphicon glyphicon-arrow-up text-primary">
+                                    </a>
+                                    <a href="<?= Url::to([
+                                        'redirect/down',
+                                        'id' => $redirect->id
+                                    ]) ?>" class="glyphicon glyphicon-arrow-down text-primary">
+                                    </a>
+                                </td>
+                                <td class="text-center">
+                                    <a href="<?= Url::to([
+                                        'redirect/switch-active',
+                                        'id' => $redirect->id
+                                    ]) ?>">
+                                        <?php if ($redirect->active): ?>
+                                            <i class="glyphicon glyphicon-ok text-success"></i>
+                                        <?php else: ?>
+                                            <i class="glyphicon glyphicon-minus text-danger"></i>
+                                        <?php endif; ?>
+                                    </a>
+                                </td>
+                                <td class="text-center">
+                                    <?= $redirect->comment ?>
+                                </td>
+                                <td class="text-center">
+                                    <?= $redirect->pattern ?>
+                                </td>
+                                <td class="text-center">
+                                    <?= $redirect->subject ?>
+                                </td>
+                                <td class="text-center">
+                                    <?= $redirect->type->code ?>
+                                </td>
+                                <td class="text-center">
+                                    <a href="<?= Url::to([
+                                        'redirect/remove',
+                                        'id' => $redirect->id
+                                    ]) ?>" class="glyphicon glyphicon-remove text-danger">
 
-                                        </a>
-                                    </td>
-                                </tr>
-                            <? endforeach; ?>
+                                    </a>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
                         </tbody>
                     </table>
                 </div>
@@ -111,7 +111,7 @@ $this->title = 'Redirects';
 <div class="modal fade" id="addRedirectPopup" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <? $redirectForm = ActiveForm::begin([
+            <?php $redirectForm = ActiveForm::begin([
                 'action' => Url::to(['redirect/create']),
                 'method' => 'post'
             ]) ?>
@@ -158,7 +158,7 @@ $this->title = 'Redirects';
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 <input type="submit" class="btn btn-primary pull-right" value="Add">
             </div>
-            <? ActiveForm::end(); ?>
+            <?php ActiveForm::end(); ?>
         </div>
     </div>
 </div>
